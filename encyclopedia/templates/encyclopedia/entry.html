@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ entry_name|safe }}
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'edit_page' edit_name=entry_name %}">
+        <input type="submit" style="float: right; margin: 20px" value="Edit Page"></input>
+    </form>
+
+    {{ entry|safe }}
+
+
+{% endblock %}
